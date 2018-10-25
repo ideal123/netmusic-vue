@@ -1,29 +1,44 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div class="page-view">
+      <router-view/>
     </div>
-    <router-view/>
+    <FooterNav/>
   </div>
 </template>
 
-<style lang="less">
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+<script>
+import FooterNav from "@/components/FooterNav";
+
+export default {
+  components: {
+    FooterNav
   }
+}
+</script>
+
+
+<style lang="less">
+html,
+body,
+#app {
+  height: 100%;
+  overflow: hidden;
+}
+ul,
+ol {
+  // margin: 0;
+  list-style: none;
+}
+#app {
+  display: flex;
+  flex-direction: column;
+  font-family: pingfangsc-regular, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.page-view {
+  overflow-y: auto;
+  flex: 1;
+  -webkit-overflow-scrolling: touch;
 }
 </style>
