@@ -22,8 +22,9 @@ export default {
 html,
 body,
 #app {
-  overflow: hidden;
   height: 100%;
+  font-family: pingfangsc-regular, sans-serif;
+  -webkit-font-smoothing: antialiased;
   line-height: 1.3;
 }
 ul,
@@ -41,15 +42,9 @@ ol {
   font-family: pingfangsc-medium, sans-serif;
 }
 
-#app {
-  display: flex;
-  flex-direction: column;
-  font-family: pingfangsc-regular, sans-serif;
-  -webkit-font-smoothing: antialiased;
-}
 .page-view {
-  overflow-y: auto;
-  flex: 1;
-  -webkit-overflow-scrolling: touch;
+  min-height: 100%;
+  padding-bottom: 128px;
+  // background: gray;
 }
 </style>
