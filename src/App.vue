@@ -23,9 +23,10 @@ html,
 body,
 #app {
   height: 100%;
+  line-height: 1.3;
   font-family: pingfangsc-regular, sans-serif;
   -webkit-font-smoothing: antialiased;
-  line-height: 1.3;
+  color: #333;
 }
 ul,
 ol {

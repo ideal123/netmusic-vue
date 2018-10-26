@@ -3,7 +3,7 @@
     <ul class="entry-list">
       <li class="list-item">
         <div class="item-circle">
-          <span class="iconfont icon-shouyinji"></span>
+          <span class="iconfont icon-radio"></span>
         </div>
         <div class="item-title">私人FM</div>
       </li>
