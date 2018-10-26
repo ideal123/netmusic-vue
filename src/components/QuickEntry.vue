@@ -29,9 +29,9 @@
   border-radius: 50%;
   background: #eb4a38;
 }
-.entry-icon {
-  // display: block;
-}
+// .entry-icon {
+//   display: block;
+// }
 .item-title {
   margin-top: 14px;
   font-size: 34px;
