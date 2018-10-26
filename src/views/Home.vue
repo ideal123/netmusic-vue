@@ -5,21 +5,27 @@
       <SearchBar/>
     </div>
     <SwitchTab/>
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <SwiperSlide/>
+    <QuickEntry/>
+    <SongList/>
   </div>
 </template>
 
 <script>
 import SearchBar from "@/components/SearchBar";
 import SwitchTab from "@/components/SwitchTab";
-import HelloWorld from "@/components/HelloWorld.vue";
+import SwiperSlide from "@/components/SwiperSlide";
+import QuickEntry from "@/components/QuickEntry";
+import SongList from "@/components/SongList";
 
 export default {
   name: "home",
   components: {
     SearchBar,
     SwitchTab,
-    HelloWorld
+    SwiperSlide,
+    QuickEntry,
+    SongList
   }
 };
 </script>
@@ -42,5 +48,8 @@ export default {
   padding-top: 70px;
   padding-bottom: 10px;
   text-align: center;
+}
+.swiper-slide {
+  margin-top: 30px;
 }
 </style>

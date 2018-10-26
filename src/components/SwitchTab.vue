@@ -1,5 +1,5 @@
 <template>
-  <div class="switch-tab">
+  <div class="switch-tab font-bold">
     <div class="tab-item active-item">个性推荐</div>
     <div class="tab-item">主播电台</div>
   </div>
@@ -10,7 +10,6 @@
   display: flex;
   margin: 0 100px;
   text-align: center;
-  font-family: pingfangsc-medium;
   font-size: 38px;
   color: #ffefe1;
 }

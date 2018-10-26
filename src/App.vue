@@ -3,18 +3,18 @@
     <div class="page-view">
       <router-view/>
     </div>
-    <FooterNav/>
+    <NavTab/>
   </div>
 </template>
 
 <script>
-import FooterNav from "@/components/FooterNav";
+import NavTab from "@/components/NavTab";
 
 export default {
   components: {
-    FooterNav
+    NavTab
   }
-}
+};
 </script>
 
 
@@ -22,14 +22,25 @@ export default {
 html,
 body,
 #app {
-  height: 100%;
   overflow: hidden;
+  height: 100%;
+  line-height: 1.3;
 }
 ul,
 ol {
-  // margin: 0;
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+.font-bold {
+  font-family: pingfangsc-medium, sans-serif;
+}
+
 #app {
   display: flex;
   flex-direction: column;
