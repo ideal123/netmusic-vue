@@ -1,11 +1,29 @@
 <template>
   <div class="quick-entry">
     <ul class="entry-list">
-      <li class="list-item" v-for="n in 4" :key="n">
+      <li class="list-item">
         <div class="item-circle">
-          <div class="entry-icon"></div>
+          <span class="iconfont icon-shouyinji"></span>
         </div>
         <div class="item-title">私人FM</div>
+      </li>
+      <li class="list-item">
+        <div class="item-circle">
+          <span class="iconfont icon-recommend"></span>
+        </div>
+        <div class="item-title">每日推荐</div>
+      </li>
+      <li class="list-item">
+        <div class="item-circle">
+          <span class="iconfont icon-songlist"></span>
+        </div>
+        <div class="item-title">歌单</div>
+      </li>
+      <li class="list-item">
+        <div class="item-circle">
+          <span class="iconfont icon-rank"></span>
+        </div>
+        <div class="item-title">排行榜</div>
       </li>
     </ul>
   </div>
@@ -26,12 +44,14 @@
   width: 145px;
   height: 145px;
   margin: 0 auto;
+  line-height: 145px;
   border-radius: 50%;
   background: #eb4a38;
 }
-// .entry-icon {
-//   display: block;
-// }
+.iconfont {
+  font-size: 70px;
+  color: #ffeefe;
+}
 .item-title {
   margin-top: 14px;
   font-size: 34px;
