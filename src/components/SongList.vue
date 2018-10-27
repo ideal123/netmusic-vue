@@ -1,7 +1,7 @@
 <template>
   <div class="song-list">
     <div class="list-title font-bold">
-      <span>推荐歌单 ></span>
+      <span>推荐歌单<span class="iconfont icon-right"></span></span>
     </div>
     <ul class="block-list">
       <li class="list-item" v-for="n in 9" :key="n">
@@ -15,6 +15,9 @@
 <style lang="less" scoped>
 .list-title {
   margin: 50px 18px 38px;
+  .iconfont {
+    font-size: 36px;
+  }
 }
 .block-list {
   overflow: hidden;
