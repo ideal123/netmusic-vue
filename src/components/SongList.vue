@@ -4,7 +4,7 @@
       <span>推荐歌单<span class="iconfont icon-right"></span></span>
     </div>
     <ul class="block-list">
-      <li class="list-item" v-for="n in 9" :key="n">
+      <li class="list-item" v-for="n in 9" :key="n" @click="$router.push(`/playlist/${n}`)">
         <div class="item-img"></div>
         <div class="item-title">口是心非 | 请别假装你会舍不得我</div>
       </li>
