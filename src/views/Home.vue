@@ -5,7 +5,7 @@
       <SearchBar/>
     </div>
     <SwitchTab/>
-    <SwiperSlide/>
+    <AppSwiper/>
     <QuickEntry/>
     <SongList/>
   </div>
@@ -14,7 +14,7 @@
 <script>
 import SearchBar from "@/components/SearchBar";
 import SwitchTab from "@/components/SwitchTab";
-import SwiperSlide from "@/components/SwiperSlide";
+import AppSwiper from "@/components/AppSwiper";
 import QuickEntry from "@/components/QuickEntry";
 import SongList from "@/components/SongList";
 
@@ -23,7 +23,7 @@ export default {
   components: {
     SearchBar,
     SwitchTab,
-    SwiperSlide,
+    AppSwiper,
     QuickEntry,
     SongList
   }
@@ -49,7 +49,7 @@ export default {
   padding-bottom: 10px;
   text-align: center;
 }
-.swiper-slide {
+.app-swiper {
   margin-top: 30px;
 }
 </style>
