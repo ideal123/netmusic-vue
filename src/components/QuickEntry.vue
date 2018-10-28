@@ -1,6 +1,6 @@
 <template>
   <div class="quick-entry">
-    <ul class="entry-list">
+    <ul class="entry-list hairlines">
       <li class="list-item">
         <div class="item-circle">
           <span class="iconfont icon-radio"></span>
@@ -30,11 +30,17 @@
 </template>
 
 <style lang="less" scoped>
+@import "../styles/mixins";
+
+.quick-entry {
+  .hairlines {
+    .border-1px;
+  }
+}
 .entry-list {
   display: flex;
   justify-content: space-around;
   padding: 45px 0;
-  border-bottom: 2px solid #e5e5e5;
   text-align: center;
 }
 .list-item {
