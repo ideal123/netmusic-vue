@@ -1,5 +1,5 @@
 <template>
-  <div class="playlist">
+  <div class="SongList">
     <div class="pl-block-bg"></div>
     <div class="pl-block">
       <TitleBar title="歌单"/>
@@ -15,18 +15,18 @@
         </div>
       </div>
     </div>
-    <PlayList/>
+    <SongList/>
   </div>
 </template>
 
 <script>
 import TitleBar from "@/components/TitleBar";
-import PlayList from "@/components/PlayList";
+import SongList from "@/components/SongList";
 
 export default {
   components: {
     TitleBar,
-    PlayList
+    SongList
   }
 }
 </script>
@@ -39,7 +39,7 @@ export default {
   left: 0;
   right: 0;
   height: 1000px;
-  transform: scale(1.5);
+  // transform: scale(1.5);
   filter: blur(20px);
   background: no-repeat 50% 50%;
   background-image: url("https://p3.music.126.net/3nj-LWfggRK877XExn-6Ug==/109951163626675255.jpg?param=170y170");
@@ -67,7 +67,7 @@ export default {
   overflow: hidden;
   width: 365px;
   background: gray;
-  border-radius: 12px;
+  border-radius: 8px;
 }
 .pl-hd-fr {
   flex: 1;
@@ -79,6 +79,7 @@ export default {
   .pl-author {
     margin-top: 55px;
     font-size: 36px;
+    color: #ccc;
   }
   .iconfont {
     font-size: 32px;
