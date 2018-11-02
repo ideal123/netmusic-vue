@@ -24,11 +24,10 @@ export default {
   height: 120px;
   padding: 0 45px;
   text-align: center;
-  color: white;
   .title-content {
     flex: 1;
     letter-spacing: 10px;
-    font-size: 52px;
+    font-size: 46px;
   }
   .iconfont {
     font-size: 68px;

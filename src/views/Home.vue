@@ -7,7 +7,7 @@
     <SwitchTab/>
     <AppSwiper/>
     <QuickEntry/>
-    <SongList/>
+    <PlayList/>
   </div>
 </template>
 
@@ -16,7 +16,7 @@ import SearchBar from "@/components/SearchBar";
 import SwitchTab from "@/components/SwitchTab";
 import AppSwiper from "@/components/AppSwiper";
 import QuickEntry from "@/components/QuickEntry";
-import SongList from "@/components/SongList";
+import PlayList from "@/components/PlayList";
 
 export default {
   name: "home",
@@ -25,7 +25,7 @@ export default {
     SwitchTab,
     AppSwiper,
     QuickEntry,
-    SongList
+    PlayList
   }
 };
 </script>
