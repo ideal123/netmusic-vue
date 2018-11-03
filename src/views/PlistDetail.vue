@@ -1,5 +1,5 @@
 <template>
-  <div class="playlist-detail">
+  <div class="plist-detail">
     <div class="pl-bg">
       <div class="pl-bg-img"></div>
       <div class="pl-bg-cover"></div>
