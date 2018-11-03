@@ -1,6 +1,9 @@
 <template>
-  <div class="SongList">
-    <div class="pl-block-bg"></div>
+  <div class="playlist-detail">
+    <div class="pl-bg">
+      <div class="pl-bg-img"></div>
+      <div class="pl-bg-cover"></div>
+    </div>
     <div class="pl-block">
       <TitleBar title="歌单"/>
       <div class="pl-info">
@@ -32,28 +35,32 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.pl-block-bg {
+.pl-bg {
   z-index: -1;
+  overflow: hidden;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 1000px;
-  // transform: scale(1.5);
-  filter: blur(20px);
+  height: 860px;
+}
+.pl-bg-img {
+  width: 100%;
+  height: 100%;
+  filter: blur(40px);
   background: no-repeat 50% 50%;
-  background-image: url("https://p3.music.126.net/3nj-LWfggRK877XExn-6Ug==/109951163626675255.jpg?param=170y170");
+  background-image: url("https://music.163.com/api/img/blur/109951163456925077?param=170y170");
   background-size: cover;
-  &::after {
-    content: "";
-    z-index: -1;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.25);
-  }
+  transform: scale(1.5, 1.5);
+}
+.pl-bg-cover {
+  opacity: 0.3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: black;
 }
 .pl-block {
   color: white;
