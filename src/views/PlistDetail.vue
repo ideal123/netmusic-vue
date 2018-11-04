@@ -73,14 +73,17 @@ export default {
     SongList
   },
   async created() {
-    const id = this.$route.params.id
+    const id = this.$route.params.id;
+    this.$loading.show();
     let result = await this.$axios.get(`/playlist/detail?id=${id}`);
+    this.$loading.hide();
+
     if (result.code === 200) {
       this.detail = result.playlist;
       this.creator = this.detail.creator;
     }
   }
-}
+};
 </script>
 
 <style lang="less" scoped>

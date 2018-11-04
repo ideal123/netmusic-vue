@@ -36,7 +36,10 @@ export default {
   async created() {
     const pArr = [this.$axios.get("/banner"), this.$axios.get("/personalized")];
 
+    this.$loading.show();
     const results = await Promise.all(pArr);
+    this.$loading.hide();
+
     if (results[0].code === 200) {
       this.banners = results[0].banners;
     }
