@@ -14,7 +14,7 @@ export default new Router({
     {
       path: "/playlist/:id",
       name: "playlist",
-      component: () => import("./views/Playlist")
+      component: () => import("./views/PlistDetail")
     }
   ]
 });

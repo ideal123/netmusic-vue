@@ -48,4 +48,9 @@ ol {
   padding-bottom: 128px;
   // background: gray;
 }
+.pic-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 </style>

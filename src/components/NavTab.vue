@@ -37,6 +37,7 @@
 
 <style lang="less" scoped>
 .footer-nav {
+  z-index: 1011;
   position: fixed;
   left: 0;
   right: 0;

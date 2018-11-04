@@ -1,6 +1,6 @@
 <template>
   <div class="title-bar">
-    <span class="iconfont icon-left"></span>
+    <span class="iconfont icon-left" @click="$router.go(-1)"></span>
     <span class="title-content">{{ title }}</span>
     <span class="iconfont icon-audio"></span>
   </div>
