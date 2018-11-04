@@ -103,7 +103,7 @@
   width: 190px;
   padding-right: 30px;
   text-align: right;
-  color: #bfbfbf;
+  color: #b1b1b1;
   .icon-video {
     margin-right: 35px;
     font-size: 48px;

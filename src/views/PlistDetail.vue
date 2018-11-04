@@ -8,14 +8,36 @@
       <TitleBar title="歌单"/>
       <div class="pl-info">
         <div class="pl-hd">
-          <div class="pl-hd-fl"></div>
+          <div class="pl-hd-fl">
+            <div class="pl-rdme-num"><span class="iconfont icon-earphone"></span>212.2万</div>
+          </div>
           <div class="pl-hd-fr">
             <div class="pl-title font-bold">我等的人 TA在多远的未来</div>
             <div class="pl-author">
-              <div class="author-avatar"></div>安Vivienne <span class="iconfont icon-right"></span>
+              <div class="author-avatar"></div>
+              <div class="author-name">我等的人</div>
+              <span class="iconfont icon-right"></span>
             </div>
           </div>
         </div>
+        <ul class="pl-social-list">
+          <li class="list-item">
+            <div><span class="iconfont icon-comment"></span></div>
+            <div class="item-content">274</div>
+          </li>
+          <li class="list-item">
+            <div><span class="iconfont icon-share"></span></div>
+            <div class="item-content">242</div>
+          </li>
+          <li class="list-item">
+            <div><span class="iconfont icon-download2"></span></div>
+            <div class="item-content">下载</div>
+          </li>
+          <li class="list-item">
+            <div><span class="iconfont icon-checkbox"></span></div>
+            <div class="item-content">多选</div>
+          </li>
+        </ul>
       </div>
     </div>
     <SongList/>
@@ -72,9 +94,21 @@ export default {
 }
 .pl-hd-fl {
   overflow: hidden;
+  position: relative;
   width: 365px;
   background: gray;
   border-radius: 8px;
+}
+.pl-rdme-num {
+  position: absolute;
+  top: 8px;
+  right: 20px;
+  font-size: 30px;
+  color: white;
+  .iconfont {
+    margin-right: 8px;
+    font-size: 30px;
+  }
 }
 .pl-hd-fr {
   flex: 1;
@@ -84,12 +118,37 @@ export default {
     font-size: 46px;
   }
   .pl-author {
+    display: flex;
+    align-items: center;
     margin-top: 55px;
     font-size: 36px;
     color: #ccc;
   }
+  .author-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: gray;
+  }
+  .author-name {
+    margin: 0 20px 0 16px;
+  }
   .iconfont {
+    margin-top: 2px;
     font-size: 32px;
   }
+}
+.pl-social-list {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 48px;
+  text-align: center;
+  font-size: 30px;
+  .iconfont {
+    font-size: 60px;
+  }
+}
+.list-item {
+  flex: 1;
 }
 </style>
