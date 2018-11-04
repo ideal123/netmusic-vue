@@ -7,6 +7,7 @@
       <li class="list-item" v-for="item in lists" :key="item.id" @click="$router.push(`/playlist/${item.id}`)">
         <div class="item-wrap">
           <img class="pic-cover" :src="item.picUrl">
+          <div class="item-rdme-num"><span class="iconfont icon-earphone"></span>{{ item.playCount | fmtCnt }}</div>
         </div>
         <div class="item-title">{{ item.name }}</div>
       </li>
@@ -57,9 +58,33 @@ export default {
   padding: 0 4px;
 }
 .item-wrap {
-  background: #d5d5d5;
+  overflow: hidden;
+  position: relative;
   height: 350px;
   border-radius: 12px;
+  background: #d5d5d5;
+  &::after {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.2), transparent);
+  }
+}
+.item-rdme-num {
+  z-index: 2;
+  position: absolute;
+  top: 8px;
+  right: 20px;
+  font-size: 28px;
+  color: white;
+  .iconfont {
+    margin-right: 8px;
+    font-size: 30px;
+  }
 }
 .item-title {
   margin: 10px;
