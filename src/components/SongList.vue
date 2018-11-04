@@ -18,7 +18,7 @@
           <div class="item-meta">徐佳莹 - 心里学</div>
         </div>
         <div class="item-right">
-          <span class="iconfont icon-video"></span>
+          <span class="iconfont icon-video1"></span>
           <span class="iconfont icon-more"></span>
         </div>
       </li>
@@ -104,7 +104,7 @@
   padding-right: 30px;
   text-align: right;
   color: #b1b1b1;
-  .icon-video {
+  .icon-video1 {
     margin-right: 35px;
     font-size: 48px;
   }
