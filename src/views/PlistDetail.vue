@@ -1,7 +1,7 @@
 <template>
   <div class="plist-detail">
     <div class="pl-bg">
-      <div class="pl-bg-img"></div>
+      <div class="pl-bg-img" :style="{ 'background-image': `url('${detail.coverImgUrl}')` }"></div>
       <div class="pl-bg-cover"></div>
     </div>
     <div class="pl-block">
@@ -9,13 +9,14 @@
       <div class="pl-info">
         <div class="pl-hd">
           <div class="pl-hd-fl">
-            <div class="pl-rdme-num"><span class="iconfont icon-earphone"></span>212.2万</div>
+            <img class="pic-cover" :src="detail.coverImgUrl">
+            <div class="pl-rdme-num"><span class="iconfont icon-earphone"></span>{{ detail.playCount | fmtCnt }}</div>
           </div>
           <div class="pl-hd-fr">
-            <div class="pl-title font-bold">我等的人 TA在多远的未来</div>
-            <div class="pl-author">
-              <div class="author-avatar"></div>
-              <div class="author-name">我等的人</div>
+            <div class="pl-title font-bold">{{ detail.name }}</div>
+            <div class="pl-author" v-show="creator.nickname">
+              <div class="author-avatar"><img class="pic-cover" :src="creator.avatarUrl"></div>
+              <div class="author-name">{{ creator.nickname }}</div>
               <span class="iconfont icon-right"></span>
             </div>
           </div>
@@ -23,11 +24,11 @@
         <ul class="pl-social-list">
           <li class="list-item">
             <div><span class="iconfont icon-comment"></span></div>
-            <div class="item-content">274</div>
+            <div class="item-content">{{ detail.commentCount }}</div>
           </li>
           <li class="list-item">
             <div><span class="iconfont icon-share"></span></div>
-            <div class="item-content">242</div>
+            <div class="item-content">{{ detail.shareCount }}</div>
           </li>
           <li class="list-item">
             <div><span class="iconfont icon-download2"></span></div>
@@ -40,7 +41,19 @@
         </ul>
       </div>
     </div>
-    <SongList/>
+    <div class="song-block">
+      <div class="list-hd">
+        <div class="hd-fl">
+          <span class="iconfont icon-play-circle"></span>
+          <span style="margin-top: -3px;">播放全部</span>
+          <span class="sub-title">(共{{ detail.trackCount }}首)</span>
+        </div>
+        <div class="hd-fr">
+          <span class="iconfont icon-add"></span>收藏({{ detail.subscribedCount }})
+        </div>
+      </div>
+      <SongList :list="detail.tracks"/>
+    </div>
   </div>
 </template>
 
@@ -49,9 +62,23 @@ import TitleBar from "@/components/TitleBar";
 import SongList from "@/components/SongList";
 
 export default {
+  data() {
+    return {
+      detail: {},
+      creator: {}
+    };
+  },
   components: {
     TitleBar,
     SongList
+  },
+  async created() {
+    const id = this.$route.params.id
+    let result = await this.$axios.get(`/playlist/detail?id=${id}`);
+    if (result.code === 200) {
+      this.detail = result.playlist;
+      this.creator = this.detail.creator;
+    }
   }
 }
 </script>
@@ -64,14 +91,13 @@ export default {
   top: 0;
   left: 0;
   right: 0;
-  height: 860px;
+  height: 760px;
 }
 .pl-bg-img {
   width: 100%;
   height: 100%;
   filter: blur(40px);
   background: no-repeat 50% 50%;
-  background-image: url("https://music.163.com/api/img/blur/109951163456925077?param=170y170");
   background-size: cover;
   transform: scale(1.5, 1.5);
 }
@@ -125,6 +151,7 @@ export default {
     color: #ccc;
   }
   .author-avatar {
+    overflow: hidden;
     width: 80px;
     height: 80px;
     border-radius: 50%;
@@ -150,5 +177,41 @@ export default {
 }
 .list-item {
   flex: 1;
+}
+.song-block {
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  background: white;
+}
+.list-hd {
+  display: flex;
+  height: 130px;
+  line-height: 130px;
+  padding-left: 26px;
+  .hd-fl {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    font-size: 44px;
+  }
+  .sub-title {
+    margin-left: 10px;
+    font-size: 36px;
+    color: #9c9c9c;
+  }
+  .hd-fr {
+    width: 315px;
+    padding-left: 24px;
+    font-size: 34px;
+    color: white;
+    background: #e95042;
+  }
+  .icon-play-circle {
+    margin-right: 26px;
+    font-size: 54px;
+  }
+  .icon-add {
+    margin-right: 8px;
+  }
 }
 </style>

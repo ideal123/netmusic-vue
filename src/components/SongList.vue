@@ -1,71 +1,33 @@
 <template>
-  <div class="song-list">
-    <div class="list-hd">
-      <div class="hd-fl">
-        <span class="iconfont icon-play-circle"></span>
-        <span style="margin-top: -3px;">播放全部</span>
-        <span class="sub-title">(共39首)</span>
+  <ul class="song-list">
+    <li class="list-item hairlines" v-for="(item, index) in list" :key="item.id">
+      <div class="item-left">{{ index + 1 }}</div>
+      <div class="item-center">
+        <div class="item-title">{{ item.name }}</div>
+        <div class="item-meta">{{ item.ar | fmtArs }} - {{ item.al.name }}</div>
       </div>
-      <div class="hd-fr">
-        <span class="iconfont icon-add"></span>收藏(32423)
+      <div class="item-right">
+        <span class="iconfont icon-video1" v-if="item.mv"></span>
+        <span class="iconfont icon-more"></span>
       </div>
-    </div>
-    <ul class="music-list">
-      <li class="list-item hairlines" v-for="n in 10" :key="n">
-        <div class="item-left">{{ n }}</div>
-        <div class="item-center">
-          <div class="item-title">现在不跳舞要干嘛</div>
-          <div class="item-meta">徐佳莹 - 心里学</div>
-        </div>
-        <div class="item-right">
-          <span class="iconfont icon-video1"></span>
-          <span class="iconfont icon-more"></span>
-        </div>
-      </li>
-    </ul>
-  </div>
+    </li>
+  </ul>
 </template>
+
+<script>
+export default {
+  props: {
+    list: {
+      type: Array
+    }
+  }
+}
+</script>
 
 <style lang="less" scoped>
 @import "../styles/mixins";
 
 .song-list {
-  border-top-left-radius: 24px;
-  border-top-right-radius: 24px;
-  background: white;
-}
-.list-hd {
-  display: flex;
-  height: 130px;
-  line-height: 130px;
-  padding-left: 26px;
-  .hd-fl {
-    display: flex;
-    align-items: center;
-    flex: 1;
-    font-size: 44px;
-  }
-  .sub-title {
-    margin-left: 10px;
-    font-size: 36px;
-    color: #9c9c9c;
-  }
-  .hd-fr {
-    width: 315px;
-    padding-left: 24px;
-    font-size: 34px;
-    color: white;
-    background: #e95042;
-  }
-  .icon-play-circle {
-    margin-right: 26px;
-    font-size: 54px;
-  }
-  .icon-add {
-    margin-right: 8px;
-  }
-}
-.music-list {
   margin-left: 110px;
   font-size: 40px;
   .hairlines {
