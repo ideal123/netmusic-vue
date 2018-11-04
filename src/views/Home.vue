@@ -5,9 +5,9 @@
       <SearchBar/>
     </div>
     <SwitchTab/>
-    <AppSwiper/>
+    <AppSwiper :banners="banners"/>
     <QuickEntry/>
-    <PlayList/>
+    <PlayList :pl="personalized" :limit="12"/>
   </div>
 </template>
 
@@ -20,6 +20,12 @@ import PlayList from "@/components/PlayList";
 
 export default {
   name: "home",
+  data() {
+    return {
+      banners: null,
+      personalized: null
+    };
+  },
   components: {
     SearchBar,
     SwitchTab,
@@ -28,8 +34,15 @@ export default {
     PlayList
   },
   async created() {
-    const banners = await this.$axios.get("/banner");
-    console.log(banners)
+    const pArr = [this.$axios.get("/banner"), this.$axios.get("/personalized")];
+
+    const results = await Promise.all(pArr);
+    if (results[0].code === 200) {
+      this.banners = results[0].banners;
+    }
+    if (results[1].code === 200) {
+      this.personalized = results[1].result;
+    }
   }
 };
 </script>

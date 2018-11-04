@@ -1,11 +1,10 @@
 <template>
   <div class="app-swiper">
     <swiper :options="options">
-      <swiper-slide>
-        <div class="slide-item"></div>
-      </swiper-slide>
-      <swiper-slide>
-        <div class="slide-item"></div>
+      <swiper-slide v-for="(banner, index) in banners" :key="index">
+        <div class="slide-item">
+          <img class="pic-cover" :src="banner.picUrl">
+        </div>
       </swiper-slide>
       <div class="swiper-pagination"  slot="pagination"></div>
     </swiper>
@@ -17,6 +16,11 @@ import { swiper, swiperSlide } from "vue-awesome-swiper";
 import "swiper/dist/css/swiper.css";
 
 export default {
+  props: {
+    banners: {
+      type: Array
+    }
+  },
   data() {
     return {
       options: {
@@ -39,7 +43,11 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.app-swiper {
+  height: 410px;
+}
 .slide-item {
+  overflow: hidden;
   margin: 0 18px;
   height: 410px;
   border-radius: 12px;

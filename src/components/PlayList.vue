@@ -4,13 +4,38 @@
       <span>推荐歌单<span class="iconfont icon-right"></span></span>
     </div>
     <ul class="block-list">
-      <li class="list-item" v-for="n in 9" :key="n" @click="$router.push(`/playlist/${n}`)">
-        <div class="item-img"></div>
-        <div class="item-title">口是心非 | 请别假装你会舍不得我</div>
+      <li class="list-item" v-for="item in lists" :key="item.id" @click="$router.push(`/playlist/${item.id}`)">
+        <div class="item-wrap">
+          <img class="pic-cover" :src="item.picUrl">
+        </div>
+        <div class="item-title">{{ item.name }}</div>
       </li>
     </ul>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    pl: {
+      type: Array
+    },
+    limit: {
+      default: 100,
+      type: Number
+    }
+  },
+  computed: {
+    lists() {
+      if (!this.pl) {
+        return null;
+      }
+      return this.pl.slice(0, this.limit);
+    }
+  }
+}
+</script>
+
 
 <style lang="less" scoped>
 .list-title {
@@ -31,7 +56,7 @@
   height: 486px;
   padding: 0 4px;
 }
-.item-img {
+.item-wrap {
   background: #d5d5d5;
   height: 350px;
   border-radius: 12px;
