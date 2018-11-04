@@ -26,6 +26,10 @@ export default {
     AppSwiper,
     QuickEntry,
     PlayList
+  },
+  async created() {
+    const banners = await this.$axios.get("/banner");
+    console.log(banners)
   }
 };
 </script>
