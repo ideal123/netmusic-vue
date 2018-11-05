@@ -182,6 +182,7 @@ export default {
   flex: 1;
 }
 .song-block {
+  overflow: hidden;
   border-top-left-radius: 24px;
   border-top-right-radius: 24px;
   background: white;
