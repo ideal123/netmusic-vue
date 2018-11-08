@@ -31,10 +31,7 @@ export default {
   margin-left: 110px;
   font-size: 40px;
   .hairlines {
-    .border-1px;
-    &:first-child {
-      .border-1px(top);
-    }
+    .border-1px(top);
   }
 }
 .list-item {
