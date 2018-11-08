@@ -12,6 +12,11 @@ export default new Router({
       component: Home
     },
     {
+      path: "/fm",
+      name: "fm",
+      component: () => import("./views/FM")
+    },
+    {
       path: "/playlist/:id",
       name: "playlist",
       component: () => import("./views/PlistDetail")

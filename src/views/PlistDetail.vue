@@ -1,9 +1,6 @@
 <template>
   <div class="plist-detail">
-    <div class="pl-bg">
-      <div class="pl-bg-img" :style="{ 'background-image': `url('${detail.coverImgUrl}')` }"></div>
-      <div class="pl-bg-cover"></div>
-    </div>
+    <FuzzBg :src="detail.coverImgUrl"/>
     <div class="pl-block">
       <TitleBar title="歌单"/>
       <div class="pl-info">
@@ -59,6 +56,7 @@
 
 <script>
 import TitleBar from "@/components/TitleBar";
+import FuzzBg from "@/components/base/FuzzBg";
 import SongList from "@/components/SongList";
 
 export default {
@@ -70,6 +68,7 @@ export default {
   },
   components: {
     TitleBar,
+    FuzzBg,
     SongList
   },
   async created() {
@@ -87,31 +86,13 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.pl-bg {
+.fuzz-bg {
   z-index: -1;
-  overflow: hidden;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 760px;
-}
-.pl-bg-img {
-  width: 100%;
-  height: 100%;
-  filter: blur(40px);
-  background: no-repeat 50% 50%;
-  background-size: cover;
-  transform: scale(1.5, 1.5);
-}
-.pl-bg-cover {
-  opacity: 0.3;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: black;
 }
 .pl-block {
   color: white;
@@ -182,6 +163,7 @@ export default {
   flex: 1;
 }
 .song-block {
+  overflow: hidden;
   border-top-left-radius: 24px;
   border-top-right-radius: 24px;
   background: white;
