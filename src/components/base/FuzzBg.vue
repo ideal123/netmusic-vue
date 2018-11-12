@@ -25,6 +25,7 @@ export default {
 
 <style lang="less" scoped>
 .fuzz-bg {
+  overflow: hidden;
   width: 100%;
   height: 100%;
   &-img {

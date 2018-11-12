@@ -13,3 +13,11 @@ export function fmtCnt(val) {
 export function fmtArs(ars) {
   return ars.map(ar => ar.name).join("&");
 }
+
+// 歌曲图片
+export function fmtPic(obj, key = "al") {
+  if (!obj) {
+    return;
+  }
+  return obj[key].picUrl;
+}

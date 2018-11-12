@@ -1,6 +1,6 @@
 <template>
   <ul class="song-list">
-    <li class="list-item hairlines" v-for="(item, index) in list" :key="item.id">
+    <li class="list-item hairlines" v-for="(item, index) in list" :key="item.id" @click="$router.push(`/song/${item.id}`)">
       <div class="item-left">{{ index + 1 }}</div>
       <div class="item-center">
         <div class="item-title">{{ item.name }}</div>
