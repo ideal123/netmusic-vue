@@ -2,7 +2,7 @@
   <div class="plist-detail">
     <FuzzBg :src="detail.coverImgUrl"/>
     <div class="pl-block">
-      <TitleBar title="歌单"/>
+      <TitleBar>歌 单</TitleBar>
       <div class="pl-info">
         <div class="pl-hd">
           <div class="pl-hd-fl">
