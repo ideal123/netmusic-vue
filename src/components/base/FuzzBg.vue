@@ -1,6 +1,6 @@
 <template>
   <div class="fuzz-bg">
-    <div class="fuzz-bg-img" :style="{ 'background-image': `url('${src}')` }"></div>
+    <div class="fuzz-bg-img" :style="styleObj"></div>
     <div class="fuzz-bg-cover"></div>
   </div>
 </template>
@@ -9,8 +9,15 @@
 export default {
   props: {
     src: {
-      required: true,
       type: String
+    }
+  },
+  computed: {
+    styleObj() {
+      if (!this.src) {
+        return null;
+      }
+      return { "background-image": `url('${this.src}')` };
     }
   }
 };
