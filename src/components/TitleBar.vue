@@ -27,7 +27,6 @@ export default {
   color: white;
   .title-content {
     flex: 1;
-    letter-spacing: 10px;
     font-size: 46px;
   }
   .iconfont {
