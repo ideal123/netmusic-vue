@@ -5,13 +5,7 @@
       <div class="song-name">{{ detail.name }}</div>
       <div class="song-auth">{{ detail.ar | fmtArs }}<span class="iconfont icon-right"></span></div>
     </TitleBar>
-    <div class="song-block">
-      <div class="img-wrap">
-        <img class="pic-cover" :src="detail | fmtPic">
-      </div>
-      <!-- <div class="song-name">陌上</div>
-      <div class="song-auth">七夕<span class="iconfont icon-right"></span></div> -->
-    </div>
+    <AudioDisk :picUrl="detail | fmtPic"/>
     <AudioPlayer></AudioPlayer>
   </div>
 </template>
@@ -19,6 +13,7 @@
 <script>
 import TitleBar from "@/components/TitleBar";
 import FuzzBg from "@/components/base/FuzzBg";
+import AudioDisk from "@/components/AudioDisk";
 import AudioPlayer from "@/components/AudioPlayer";
 
 export default {
@@ -30,6 +25,7 @@ export default {
   components: {
     TitleBar,
     FuzzBg,
+    AudioDisk,
     AudioPlayer
   },
   async created() {
@@ -61,28 +57,5 @@ export default {
   top: 0;
   left: 0;
   z-index: -1;
-}
-.song-block {
-  margin-bottom: 160px;
-  text-align: center;
-  color: white;
-}
-.img-wrap {
-  overflow: hidden;
-  height: 916px;
-  width: 916px;
-  margin: 100px auto 80px;
-  border-radius: 12px;
-}
-.song-name {
-  font-size: 40px;
-}
-.song-auth {
-  margin-right: -26px;
-  font-size: 30px;
-  color: rgba(255, 255, 255, 0.6);
-  .iconfont {
-    font-size: 26px;
-  }
 }
 </style>
