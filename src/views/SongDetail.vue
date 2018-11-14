@@ -1,17 +1,11 @@
 <template>
   <div class="song-detail">
-    <FuzzBg :src="detail | fmtPic" />
+    <FuzzBg :src="detail.al | fmtPic" />
     <TitleBar>
       <div class="song-name">{{ detail.name }}</div>
       <div class="song-auth">{{ detail.ar | fmtArs }}<span class="iconfont icon-right"></span></div>
     </TitleBar>
-    <div class="song-block">
-      <div class="img-wrap">
-        <img class="pic-cover" :src="detail | fmtPic">
-      </div>
-      <!-- <div class="song-name">陌上</div>
-      <div class="song-auth">七夕<span class="iconfont icon-right"></span></div> -->
-    </div>
+    <AudioDisk :picUrl="detail.al | fmtPic"/>
     <AudioPlayer></AudioPlayer>
   </div>
 </template>
@@ -19,6 +13,7 @@
 <script>
 import TitleBar from "@/components/TitleBar";
 import FuzzBg from "@/components/base/FuzzBg";
+import AudioDisk from "@/components/AudioDisk";
 import AudioPlayer from "@/components/AudioPlayer";
 
 export default {
@@ -30,6 +25,7 @@ export default {
   components: {
     TitleBar,
     FuzzBg,
+    AudioDisk,
     AudioPlayer
   },
   async created() {
@@ -47,6 +43,8 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@import "../styles/mixins";
+
 .song-detail {
   z-index: 1012;
   position: fixed;
@@ -55,24 +53,6 @@ export default {
   right: 0;
   bottom: 0;
   background: white;
-}
-.fuzz-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-.song-block {
-  margin-bottom: 160px;
-  text-align: center;
-  color: white;
-}
-.img-wrap {
-  overflow: hidden;
-  height: 916px;
-  width: 916px;
-  margin: 100px auto 80px;
-  border-radius: 12px;
 }
 .song-name {
   font-size: 40px;
@@ -84,5 +64,14 @@ export default {
   .iconfont {
     font-size: 26px;
   }
+}
+.fuzz-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.audio-disk {
+  .border-1px(top, #ccc);
 }
 </style>
