@@ -8,7 +8,12 @@
     right: 0;
     @{direction}: 0;
     border-@{direction}: 1px solid @color;
-    transform: scaleY(0.5);
+    transform: scaleY(0.333);
     transform-origin: 0 0;
+  }
+  @media screen and (max-width: 400px) {
+    &::after {
+      transform: scaleY(0.5);
+    }
   }
 }

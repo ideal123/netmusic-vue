@@ -11,13 +11,16 @@ export function fmtCnt(val) {
 
 // 歌手名字组合
 export function fmtArs(ars) {
+  if (!ars) {
+    return;
+  }
   return ars.map(ar => ar.name).join("&");
 }
 
 // 歌曲图片
-export function fmtPic(obj, key = "al") {
+export function fmtPic(obj) {
   if (!obj) {
     return;
   }
-  return obj[key].picUrl;
+  return obj.picUrl;
 }

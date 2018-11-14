@@ -1,11 +1,11 @@
 <template>
   <div class="song-detail">
-    <FuzzBg :src="detail | fmtPic" />
+    <FuzzBg :src="detail.al | fmtPic" />
     <TitleBar>
       <div class="song-name">{{ detail.name }}</div>
       <div class="song-auth">{{ detail.ar | fmtArs }}<span class="iconfont icon-right"></span></div>
     </TitleBar>
-    <AudioDisk :picUrl="detail | fmtPic"/>
+    <AudioDisk :picUrl="detail.al | fmtPic"/>
     <AudioPlayer></AudioPlayer>
   </div>
 </template>
@@ -43,6 +43,8 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@import "../styles/mixins";
+
 .song-detail {
   z-index: 1012;
   position: fixed;
@@ -52,10 +54,24 @@ export default {
   bottom: 0;
   background: white;
 }
+.song-name {
+  font-size: 40px;
+}
+.song-auth {
+  margin-right: -26px;
+  font-size: 30px;
+  color: rgba(255, 255, 255, 0.6);
+  .iconfont {
+    font-size: 26px;
+  }
+}
 .fuzz-bg {
   position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
+}
+.audio-disk {
+  .border-1px(top, #ccc);
 }
 </style>

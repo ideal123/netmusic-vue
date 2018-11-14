@@ -33,10 +33,10 @@ export default {
   z-index: 10;
   position: absolute;
   top: 0;
-  left: 60%;
+  left: 50%;
   width: 280px;
   height: 410px;
-  margin-left: -140px;
+  margin-left: -48px;
   background: url("../assets/needle.png") no-repeat;
   background-size: contain;
 }
