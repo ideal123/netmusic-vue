@@ -1,5 +1,5 @@
 const instance = axios.create({
-  baseURL: "http://westo.club:3001/",
+  baseURL: "//api.ucome.club",
   timeout: 5000
 });
 
