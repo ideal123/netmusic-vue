@@ -1,7 +1,7 @@
 <template>
   <div class="title-bar">
-    <span class="iconfont icon-left"></span>
-    <span class="title-content">{{ title }}</span>
+    <span class="iconfont icon-left" @click="$router.go(-1)"></span>
+    <span class="title-content"><slot></slot></span>
     <span class="iconfont icon-audio"></span>
   </div>
 </template>
@@ -27,8 +27,7 @@ export default {
   color: white;
   .title-content {
     flex: 1;
-    letter-spacing: 10px;
-    font-size: 52px;
+    font-size: 46px;
   }
   .iconfont {
     font-size: 68px;

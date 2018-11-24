@@ -24,6 +24,7 @@ body,
 #app {
   height: 100%;
   line-height: 1.3;
+  font-size: 42px;
   font-family: pingfangsc-regular, sans-serif;
   -webkit-font-smoothing: antialiased;
   color: #333;
@@ -39,13 +40,21 @@ ol {
 *::after {
   box-sizing: border-box;
 }
-.font-bold {
-  font-family: pingfangsc-medium, sans-serif;
+.iconfont {
+  font-size: 36px;
 }
 
 .page-view {
   min-height: 100%;
   padding-bottom: 128px;
   // background: gray;
+}
+.font-bold {
+  font-family: pingfangsc-medium, sans-serif;
+}
+.pic-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 </style>

@@ -12,9 +12,19 @@ export default new Router({
       component: Home
     },
     {
+      path: "/fm",
+      name: "fm",
+      component: () => import("./views/FM")
+    },
+    {
+      path: "/song/:id",
+      name: "song-detail",
+      component: () => import("./views/SongDetail")
+    },
+    {
       path: "/playlist/:id",
-      name: "playlist",
-      component: () => import("./views/Playlist")
+      name: "plist-detail",
+      component: () => import("./views/PlistDetail")
     }
   ]
 });
