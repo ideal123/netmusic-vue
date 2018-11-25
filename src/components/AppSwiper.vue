@@ -3,7 +3,7 @@
     <swiper :options="options" v-if="banners">
       <swiper-slide v-for="(banner, index) in banners" :key="index">
         <div class="slide-item">
-          <img class="pic-cover" :src="banner.picUrl">
+          <img class="pic-cover" :src="banner.imageUrl">
         </div>
       </swiper-slide>
       <div class="swiper-pagination"  slot="pagination"></div>
@@ -51,7 +51,7 @@ export default {
   margin: 0 18px;
   height: 410px;
   border-radius: 12px;
-  // background: #e0e4e3;
+  background: #fdfeff;
 }
 </style>
 

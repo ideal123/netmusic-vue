@@ -1,2 +1,1 @@
-# Redirect default Netlify subdomain to primary domain
-http://musing-albattani-a16b84.netlify.com/* http://music.ucome.club/:splat 301!
+/api/*  http://api.westo.club:3001/:splat  200
