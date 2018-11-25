@@ -5,7 +5,7 @@
       <div class="disc-turn">
         <div class="disc-rollwrap">
           <div class="disc-img">
-            <img :src="picUrl" class="song-img">
+            <img :src="picUrl | httpify" class="pic-cover">
           </div>
         </div>
         <div class="disc-light"></div>
@@ -66,9 +66,5 @@ export default {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-}
-.song-img {
-  width: 100%;
-  vertical-align: middle;
 }
 </style>

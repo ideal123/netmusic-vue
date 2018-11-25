@@ -3,7 +3,7 @@
     <swiper :options="options" v-if="banners">
       <swiper-slide v-for="(banner, index) in banners" :key="index">
         <div class="slide-item">
-          <img class="pic-cover" :src="banner.imageUrl">
+          <img class="pic-cover" :src="banner.imageUrl | httpify">
         </div>
       </swiper-slide>
       <div class="swiper-pagination"  slot="pagination"></div>

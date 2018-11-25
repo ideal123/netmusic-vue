@@ -6,7 +6,7 @@
     <ul class="block-list">
       <li class="list-item" v-for="item in lists" :key="item.id" @click="$router.push(`/playlist/${item.id}`)">
         <div class="item-wrap">
-          <img class="pic-cover" :src="item.picUrl">
+          <img class="pic-cover" :src="item.picUrl | httpify">
           <div class="item-rdme-num"><span class="iconfont icon-earphone"></span>{{ item.playCount | fmtCnt }}</div>
         </div>
         <div class="item-title">{{ item.name }}</div>
