@@ -74,7 +74,10 @@ export default {
   async created() {
     const id = this.$route.params.id;
     this.$loading.show();
-    let result = await this.$axios.get(`/playlist/detail?id=${id}`);
+    let result = await this.$axios.get(`/playlist/detail?id=${id}`).catch(err => {
+      this.$loading.hide();
+      throw err;
+    });
     this.$loading.hide();
 
     if (result.code === 200) {

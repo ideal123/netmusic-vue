@@ -24,3 +24,19 @@ export function fmtPic(obj) {
   }
   return obj.picUrl;
 }
+
+// 歌曲图片背景
+export function fmtBgPic(src) {
+  if (!src) {
+    return null;
+  }
+  return { "background-image": `url('${src.replace(/^http:/, "https:")}')` };
+}
+
+// 资源https化
+export function httpify(str) {
+  if (!str) {
+    return "";
+  }
+  return str.replace(/^http:/, "https:");
+}
