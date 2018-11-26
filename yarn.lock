@@ -6016,8 +6016,8 @@ svgo@^1.0.0:
     util.promisify "~1.0.0"
 
 swiper@^4.0.7:
-  version "4.4.1"
-  resolved "http://registry.npm.taobao.org/swiper/download/swiper-4.4.1.tgz#9eeca17c5bfa4a27663963b2640119e5fc668255"
+  version "4.4.2"
+  resolved "http://registry.npm.taobao.org/swiper/download/swiper-4.4.2.tgz#3a35237cbf4870034784e158b4197b65b763d647"
   dependencies:
     dom7 "^2.1.2"
     ssr-window "^1.0.1"
