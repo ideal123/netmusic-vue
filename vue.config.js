@@ -1,4 +1,5 @@
 module.exports = {
+  baseUrl: "https://s0.ucome.club",
   devServer: {
     proxy: {
       "/api": {
