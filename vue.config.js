@@ -1,5 +1,6 @@
 module.exports = {
-  baseUrl: "https://s0.ucome.club",
+  baseUrl:
+    process.env.NODE_ENV === "production" ? "https://s0.ucome.club" : "/",
   devServer: {
     proxy: {
       "/api": {
