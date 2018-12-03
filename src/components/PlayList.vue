@@ -34,7 +34,7 @@ export default {
       return this.pl.slice(0, this.limit);
     }
   }
-}
+};
 </script>
 
 
