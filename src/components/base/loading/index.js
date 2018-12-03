@@ -29,4 +29,4 @@ export default {
     instance = instance || newInstance();
     instance.update(false);
   }
-}
+};
