@@ -1,10 +1,10 @@
 module.exports = {
-  baseUrl:
-    process.env.NODE_ENV === "production" ? "https://s0.ucome.club" : "/",
+  // baseUrl:
+  //   process.env.NODE_ENV === "production" ? "https://s0.ucome.club" : "/",
   devServer: {
     proxy: {
       "/api": {
-        target: "http://api.westo.club:3001/",
+        target: "http://47.104.247.173:3001/",
         changeOrigin: true,
         pathRewrite: { "^/api": "/" }
       }
